@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="265c2b3c-febc-46b0-a1b5-08f897b74a3c" Version="1.0.0.0" Publisher="CN=WindowsBrokeredComponent" />
+  <Properties>
+    <DisplayName>WindowsBrokeredComponent</DisplayName>
+    <PublisherDisplayName>WindowsBrokeredComponent</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <m2:VisualElements DisplayName="Windows Brokered Component App" Description="Windows Brokered Component App" ForegroundText="light" BackgroundColor="#22AA11" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png">
+        <m2:SplashScreen Image="images\splashscreen.png" />
+      </m2:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>clrhost.dll</Path>
+        <ActivatableClass ActivatableClassId="WindowsBrokeredComponent.Clock" ThreadingModel="both">
+          <ActivatableClassAttribute Name="DesktopApplicationPath" Type="string" Value="d:\RnD\WindowsBrokeredComponent\Debug" />
+        </ActivatableClass>
+        <ActivatableClass ActivatableClassId="WindowsBrokeredComponent.TickInfo" ThreadingModel="both">
+          <ActivatableClassAttribute Name="DesktopApplicationPath" Type="string" Value="d:\RnD\WindowsBrokeredComponent\Debug" />
+        </ActivatableClass>
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>
